@@ -4,6 +4,15 @@ body {
     color: #333;
 }
 
+body.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+.dark-mode a {
+    color: #4da6ff;
+}
+
 .navbar {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -54,6 +63,11 @@ h2 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
     text-align: center;
+}
+
+.dark-mode .card {
+    background-color: #1e1e1e;
+    color: white;
 }
 
 .projects-grid .card:hover {
