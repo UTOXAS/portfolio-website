@@ -32,6 +32,10 @@ class FileSelectorApp:
         )
         ttk.Button(
             btn_frame, text="Combine Selected Files", command=self.combine_files
+        ).pack(side=tk.LEFT, padx=5)
+
+        ttk.Button(
+            btn_frame, text="Export Directory Tree", command=self.export_selected_tree
         ).pack(side=tk.RIGHT, padx=5)
 
         self.tree.bind("<ButtonRelease-1>", self.toggle_selection)
@@ -110,6 +114,72 @@ class FileSelectorApp:
                     outfile.write(infile.read() + "\n\n")
 
         messagebox.showinfo("Success", f"Filed combined into {output_file}")
+
+    def export_selected_tree(self):
+        selected_items = self.get_selected_files()
+        if not selected_items:
+            messagebox.showwarning("No Selection", "Please select files/folders")
+            return
+
+        root_folder = os.path.commonpath(selected_items)
+        tree_structure = self.generate_selected_tree(root_folder, selected_items)
+
+        # folder = os.getcwd()
+
+        # tree_structure = self.generate_directory_tree(folder)
+        outout_file = "directory_tree.txt"
+        with open(outout_file, "w", encoding="utf-8") as file:
+            file.write(tree_structure)
+
+        messagebox.showinfo("success", f"Directory tree saved to {outout_file}")
+
+    def generate_selected_tree(self, root_folder, selected_items, prefix=""):
+        """
+        Generates a hierarchical tree structure only for selected files and folders.
+        """
+        tree_dict = {}
+
+        for path in selected_items:
+            relative_path = os.path.relpath(path, root_folder)
+            parts = relative_path.split(os.sep)
+            current_dict = tree_dict
+
+            for part in parts:
+                if part not in current_dict:
+                    current_dict[part] = {}
+                current_dict = current_dict[part]
+
+        def format_tree(directory, prefix=""):
+            """Recursively formats the tree dictionary into a string"""
+
+            # tree_string = f"{prefix}{os.path.basename(root_folder)}/\n"
+            tree_string = ""
+
+            items = sorted(directory.keys())
+
+            for index, item in enumerate(items):
+                is_last = index == len(items) - 1
+                # path = os.path.join(root_folder, item)
+                # relative_path = os.path.relpath(item, root_folder)
+                # parts = relative_path.split(os.sep)
+                # is_folder = os.path.isdir(relative_path)
+                # connector = "│   " if index < len(items) - 1 else "    "
+                branch = "└── " if is_last else "├── "
+
+                tree_string += f"{prefix}{branch}{item}\n"
+
+                if directory[item]:
+                    new_prefix = prefix + ("    " if is_last else "│   ")
+                    tree_string += format_tree(directory[item], new_prefix)
+                # if is_folder:
+                # tree_string += f"{prefix}{branch}{item}/\n"
+                # tree_string += self.generate_selected_tree(relative_path, prefix + connector)
+                # else:
+                # tree_string += f"{prefix}{branch}{item}\n"
+
+            return tree_string
+
+        return f"{os.path.basename(root_folder)}/\n" + format_tree(tree_dict)
 
 
 if __name__ == "__main__":
