@@ -21,8 +21,9 @@ body.dark-mode {
 }
 
 body.dark-mode .toggle-label {
-    background-color: #ddd;
-    color: black;
+    /* background-color: #ddd; */
+    /* color: black; */
+    color: #ffc107;
 }
 
 .dark-mode a {
@@ -183,13 +184,16 @@ footer {
     cursor: pointer;
     padding: 5px 10px;
     border-radius: 20px;
-    background-color: #333;
-    color: white;
-    transition: background 0.3s;
+    /* background-color: #333; */
+    /* color: white; */
+    /* transition: background 0.3s; */
+    color: #f8f9fa;
+    transition: color 0.3s ease, background 0.3 ease;
 }
 
 .toggle-label:hover {
-    background-color: #555;
+    /* background-color: #555; */
+    opacity: 0.8;
 }
 
 

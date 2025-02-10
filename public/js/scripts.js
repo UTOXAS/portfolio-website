@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
+
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener("click", function(event) {
             event.preventDefault();
@@ -12,21 +13,43 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    const darkModeToggle = document.getElementById("dark-mode-toggle");
-    if (darkModeToggle) {
-        function applyDarkMode(isDark) {
-            document.body.classList.toggle("dark-mode", isDark);
-            localStorage.setItem("darkMode", isDark);
-        }
+    const darkModeCheckbox = document.getElementById("dark-mode-checkbox");
+    const body = document.body;
+    const toggleLabel = document.querySelector(".toggle-label");
 
-        const isDarkMode = localStorage.getItem("darkMode") === "true";
-        applyDarkMode(isDarkMode);
-
-        darkModeToggle.addEventListener("click", function () {
-            applyDarkMode(!document.body.classList.contains("dark-mode"));
-        });
-
+    if (localStorage.getItem("darkMode") === "enabled") {
+        body.classList.add("dark-mode");
+        darkModeCheckbox.checked = true;
+        toggleLabel.textContent = "☀️";
     }
+
+    darkModeCheckbox.addEventListener("change", function() {
+        if (this.checked) {
+            body.classList.add("dark-mode");
+            localStorage.setItem("darkMode", "enabled");
+            toggleLabel.textContent = "☀️";
+        } else {
+            body.classList.remove("dark-mode");
+            localStorage.setItem("darkMode", "disabled");
+            toggleLabel.textContent = "🌙";
+        }
+    });
+
+    // const darkModeToggle = document.getElementById("dark-mode-toggle");
+    // if (darkModeToggle) {
+    //     function applyDarkMode(isDark) {
+    //         document.body.classList.toggle("dark-mode", isDark);
+    //         localStorage.setItem("darkMode", isDark);
+    //     }
+
+    //     const isDarkMode = localStorage.getItem("darkMode") === "true";
+    //     applyDarkMode(isDarkMode);
+
+    //     darkModeToggle.addEventListener("click", function () {
+    //         applyDarkMode(!document.body.classList.contains("dark-mode"));
+    //     });
+
+    // }
 
     const filterButtons = document.querySelectorAll(".filter-btn");
     const projectCards = document.querySelectorAll(".projects-grid .card")
