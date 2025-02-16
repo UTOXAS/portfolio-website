@@ -41,7 +41,7 @@ function loadPage(page, data, onPageLoad) {
     })
     .catch(error => {
         console.error("Error loading page:", error);
-        appContainer.innerHTML = "Error loading page.";
+        appContainer.innerHTML = "<p style='color:red;'>Error loading page.</p>";
     });
 }
 
@@ -72,38 +72,41 @@ function includeComponent(componentName, data) {
 }
 
 function hightlightActiveNav() {
-    const currentPath = window.location.pathname;
+    const currentHash = window.location.hash.replace("#", "") || "home";
+    // const currentPath = window.location.pathname;
     const links = document.querySelectorAll('.navbar-nav .nav-link');
 
     links.forEach(link => {
-        const linkPath = link.getAttribute('href');
+        const linkPage = link.getAttribute('href').replace("#", "");
 
-        const normalizedLinkPath = new URL(linkPath, window.location.origin).pathname;
-        const normalizedCurrentPath = currentPath.endsWith('/') ? `${currentPath}home.html` : currentPath;
-
-        if (normalizedCurrentPath.includes(normalizedLinkPath) ) {
-            link.classList.add('active');
+        if (currentHash === linkPage) {
+            link.classList.add("active");
         } else {
-            link.classList.remove('active');
+            link.classList.remove("active");
         }
     });
 }
 
-const homePageData = {
-    contextName: "home",
-};
+function handleRouting() {
+    let page = window.location.hash.replace("#", "") || "home";
+
+    console.log(`page: ${page}`);
 
 
-
-loadPage('home', homePageData, function() {
-
-
-});
-
-setTimeout(() => {
-    appContainer.classList.add("styled-container");
-})
+    if (window.location.pathname.startsWith("/views/")) {
+        page = window.location.pathname.split("/").pop().replace(".html", "");
+        window.location.replace(`/#${page}`);
+        return;
+    }
 
 
+    loadPage(page, {}, function() {
+        document.title = `My Portfolio - ${page.charAt(0).toUpperCase() + page.slice(1)}`;
+    });
+}
+
+window.addEventListener("hashchange", handleRouting);
+window.addEventListener("DOMContentLoaded", handleRouting);
+handleRouting();
 
 });
