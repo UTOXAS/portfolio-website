@@ -63,7 +63,8 @@ h2 {
 .about-text {
     font-size: 1.1rem;
     line-height: 1.6;
-    text-align: justify;
+    /* text-align: justify; */
+    /* text-justify: inter-word; */
 }
 
 .filter-btn {
