@@ -77,6 +77,10 @@ h2 {
     margin-bottom: 20px;
 }
 
+/* #abdullah_picture {
+    object-fit: cover !important;
+} */
+
 .about-text {
     font-size: 1.1rem;
     line-height: 1.6;
