@@ -1,8 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    // const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-    // const basePath = isLocal ? '' : '/portfolio-website';
-
     const appContainer = document.getElementById('app-container');
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -110,7 +107,6 @@ function handleRouting() {
 }
 
 window.addEventListener("hashchange", handleRouting);
-// window.addEventListener("DOMContentLoaded", handleRouting);
 handleRouting();
 
 });

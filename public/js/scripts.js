@@ -1,28 +1,24 @@
-// document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function() {
 
 
-    // setDarkModeToggle();
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const projectCards = document.querySelectorAll(".projects-grid .card")
 
-    // setDarkModeToggle();
+    if (filterButtons.length > 0) {
+        filterButtons.forEach(button => {
+            button.addEventListener("click", function () {
+                const category = this.getAttribute("data-category");
 
-//     const filterButtons = document.querySelectorAll(".filter-btn");
-//     const projectCards = document.querySelectorAll(".projects-grid .card")
+                projectCards.forEach(card => {
 
-//     if (filterButtons.length > 0) {
-//         filterButtons.forEach(button => {
-//             button.addEventListener("click", function () {
-//                 const category = this.getAttribute("data-category");
+                    card.style.display = (category === "all" || card.classList.contains(category)) ? "block" : "none";
+                });
 
-//                 projectCards.forEach(card => {
-
-//                     card.style.display = (category === "all" || card.classList.contains(category)) ? "block" : "none";
-//                 });
-
-//                 filterButtons.forEach(btn => btn.classList.remove("active"));
-//                 this.classList.add("active");
-//             });
-//         });
-//     }
+                filterButtons.forEach(btn => btn.classList.remove("active"));
+                this.classList.add("active");
+            });
+        });
+    }
 
 
 // });
@@ -68,3 +64,4 @@
 
 //     }
 // }
+});
