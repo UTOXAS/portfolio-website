@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-    const basePath = isLocal ? '' : '/portfolio-website';
+    // const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    // const basePath = isLocal ? '' : '/portfolio-website';
 
     const appContainer = document.getElementById('app-container');
 
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
 function loadPage(page, data, onPageLoad) {
-    fetch(`${basePath}/views/${page}.html`)
+    fetch(`${window.APP_CONFIG.basePath}/views/${page}.html`)
     .then(response => response.text())
     .then(html => {
         const tempDiv = document.createElement("div");
@@ -27,7 +27,7 @@ function loadPage(page, data, onPageLoad) {
 
         const bodyContent = tempDiv.querySelector("body")?.innerHTML || html;
         
-        let processedHtml = bodyContent.replace('/(href|src)="\/([^"]*)"/g', `$1="${basePath}/$2"`);;
+        let processedHtml = bodyContent.replace('/(href|src)="\/([^"]*)"/g', `$1="${window.APP_CONFIG.basePat}/$2"`);;
         if (data) {
             for (const key in data) {
                 const placeholder = `{{${key}}}`;
@@ -60,7 +60,7 @@ function includeComponent(componentName, data) {
                 const placeholder = `{{${key}}}`;
                 const regex = new RegExp(placeholder, 'g');
                 processedHtml = processedHtml.replace(regex, data[key]);
-                processedHtml = processedHtml.replace('/(href|src)="\/([^"]*)"/g', `$1="${basePath}/$2"`);
+                processedHtml = processedHtml.replace('/(href|src)="\/([^"]*)"/g', `$1="${window.APP_CONFIG.basePat}/$2"`);
             }
         }
 
