@@ -8,7 +8,7 @@
             let currentPath = window.location.pathname;
 
             // Determine the base path dynamically
-            let basePath = currentPath.substring(0, currentPath.lastIndexOf('/') + 1) || '/';
+            basePath = currentPath.substring(0, currentPath.lastIndexOf('/') + 1) || '/';
 
             // Create the <base> element dynamically
             let baseTag = document.createElement('base');
@@ -21,17 +21,18 @@
 
 
     <title>My Profile</title>
-    <script src="public/js/config.js"></script>
-    <script src="index.js" defer></script>
-    <link rel="stylesheet" href="public/css/style.css">
-    <link rel="stylesheet" href="public/css/bootstrap.css">
+    <script src="config/config.js"></script>
+    <script src="assets/js/main.js" defer></script>
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
     <div id="app-container"></div>
 </body>
 
-<script src="public/js/bootstrap.js"></script>
-<script src="public/js/scripts.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/js/scripts.js"></script>
+<script src="assets/js/dart-mode.js"></script>
 
 </html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        (function () {
+            // Get the current URL path
+            let currentPath = window.location.pathname;
+
+            // Determine the base path dynamically
+            let basePath = currentPath.substring(0, currentPath.lastIndexOf('/') + 1) || '/';
+
+            // Create the <base> element dynamically
+            let baseTag = document.createElement('base');
+            baseTag.href = basePath;
+            document.head.prepend(baseTag);
+        })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css">
+    <script src="/config/config.js"></script>
+    <script src="/assets/js/main.js" defer></script>
+
+</head>
+
+<body>
+
+    <div id="header-container"></div>
+
+    <main id="about">
+        <section class="container mt-5 p-4 shadow-sm bg-light rounded">
+            <div class="row align-items-center">
+                <div class="col-md-4 text-center">
+                    <img id="abdullah_picture" src="/assets/images/profile.jpg" alt="My Photo"
+                        class="img-fluid rounded-circle mb-4 shadow-lg" width="225" height="225">
+                </div>
+                <div class="col-md-8">
+                    <h2>About Me</h2>
+                    <p>
+                        I specialize in creating <i>desktop programs</i> and <strong>mobile
+                            applications</strong> tailored to meet your
+                        specific requirements. My work is driven by a commitment to <strong>excellence, clear
+                            communication, and customer
+                            satisfaction</strong>.
+                    </p>
+
+                    <h3>Work Principles</h3>
+                    <ul class="styled-list">
+                        <li><strong>✔ Timely Delivery:</strong> Ensuring projects are completed on schedule.</li>
+                        <li><strong>✔ Client Satisfaction:</strong> Your requirements and satisfaction are my top
+                            priority.</li>
+                        <li><strong>✔ Clear Communication:</strong> Providing updates and seamless collaboration.</li>
+                        <li><strong>✔ Satisfaction Guaranteed:</strong> Payment is required only when you are completely
+                            satisfied.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="container mt-5 p-4 shadow-sm bg-white rounded">
+            <div class="col-md-8 mx-auto">
+                <h2>Desktop Software Development</h2>
+                <p>
+                    I develop <strong>robust and user-friendly desktop applications</strong> tailored for specific
+                    needs.
+                    With a strong focus on <strong>functionality and performance</strong>, I ensure that every
+                    application is <strong>efficient, reliable, and easy to use</strong>.
+                </p>
+
+                <h3>Services Offered</h3>
+                <ul class="styled-list">
+                    <li>Development of <strong>console-based applications</strong>.</li>
+                    <li><strong>GUI-based applications</strong> with intuitive designs using <strong>Tkinter</strong> or
+                        <strong>JavaFX</strong>.
+                    </li>
+                    <li>Applications for <strong>data processing, parsing, and manipulation</strong> (CSV, Excel, JSON,
+                        XML, etc.).</li>
+                    <li><strong>Database-driven software</strong> for efficient data storage and retrieval.</li>
+                    <li>Custom solutions tailored to unique project requirements.</li>
+                </ul>
+
+                <h3>Technical Expertise</h3>
+                <ul class="styled-list">
+                    <li><strong>Languages:</strong> Proficient in <strong>Python</strong> and <strong>Java</strong>.
+                    </li>
+                    <li><strong>Frameworks & Tools:</strong> Expertise in <strong>JavaFX</strong> and <strong>Python GUI
+                            libraries</strong>.</li>
+                    <li><strong>Database Management:</strong> Skilled in integrating and managing databases.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="mt-5 container d-flex justify-content-center">
+            <div class="col-md-8">
+                <h2>Mobile App Development</h2>
+                <p>
+                    I specialize in developing **Android applications** that are **efficient, user-friendly, and
+                    tailored to
+                    your specific requirements**.
+                    Whether using **Flutter (Dart)** for cross-platform apps or **native Android development**, I focus
+                    on
+                    creating **seamless user experiences**.
+                </p>
+
+                <h3>Services Offered</h3>
+                <ul>
+                    <li>**Flutter Android applications** with modern and responsive designs.</li>
+                    <li>**Native Android apps** built with performance and usability in mind.</li>
+                    <li>Apps that **interact with databases** for data storage and retrieval.</li>
+                    <li>Applications that **handle data manipulation and processing** (e.g., CSV, JSON).</li>
+                    <li>**Custom mobile solutions** designed to meet unique project needs.</li>
+                </ul>
+
+                <h3>Technical Expertise</h3>
+                <ul>
+                    <li><strong>Languages:</strong> Proficient in **Dart (Flutter)** and **Java**.</li>
+                    <li><strong>Frameworks & Tools:</strong> Flutter for cross-platform development, native Android
+                        tools.
+                    </li>
+                    <li><strong>Database Integration:</strong> Experience with efficient data handling in mobile
+                        applications.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="mt-5 container d-flex justify-content-center text-center">
+            <div class="col-md-8">
+                <h2>Let's Work Together</h2>
+                <p>If you are looking for a **dedicated developer** to bring your ideas to life, feel free to reach out!
+                </p>
+
+                <a href="https://www.freelancer.com/u/ContCocacola" target="_blank" class="btn btn-primary me-2">View on
+                    Freelancer</a>
+                <a href="https://www.upwork.com/freelancers/~01881c0ded75c4df19?mp_source=share" target="_blank"
+                    class="btn btn-success">View on Upwork</a>
+            </div>
+        </section>
+
+    </main>
+    <footer class="text-center bg-dark text-white py-3 mt-5">
+        <p>&copy; 2025 Abdullah. All rights reserved.</p>
+    </footer>
+
+    <script src="/assets/js/dart-mode.js"></script>
+    <script src="/assets/js/scripts.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+
+</body>
+
+</html>
