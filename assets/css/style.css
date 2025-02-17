@@ -126,8 +126,8 @@ h2 {
 }
 /* class="projects-grid" */
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* display: grid; */
+    /* grid-template-columns: repeat(auto-fit); */
     gap: 20px;
     padding: 20px;
 }

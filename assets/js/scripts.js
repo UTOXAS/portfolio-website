@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    console.log("script.js");
+    // console.log("script.js");
 
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

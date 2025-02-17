@@ -1,6 +1,6 @@
 // document.addEventListener("DOMContentLoaded", function () {
 try {
-document.addEventListener("DOMContentLoaded", function() {
+// document.addEventListener("DOMContentLoaded", function() {
 
     console.log("projects.js domcontentloaded");
 // document.addEventListener("load", function () {
@@ -49,32 +49,33 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     ];
 
-    const projectsContainer = document.getElementById("projects-container");
+
 
     // if (!projectsContainer) {
     //     console.error("Error: #projects-container not found.");
     //     return;
     // }
 
-
+    const projectsContainer = document.getElementById("projects-container");
     projects.forEach(project => {
         fetch(`${window.APP_CONFIG.basePath}/partials/project-card.html`)
         .then(response => response.text())
         .then(template => {
             let cardHTML = template
-            .replace("{{title}}", project.title)
+            .replaceAll("{{title}}", project.title)
             .replace("{{description}}", project.description)
             .replace("{{image}}", project.image)
             .replace("{{category}}", project.category)
             .replace("{{link}}", project.link);
 
             console.log(project.title);
-            projectsContainer.insertAdjacentElement("beforeend", cardHTML); 
+            // projectsContainer.insertAdjacentElement("beforeend", cardHTML);
+            projectsContainer.innerHTML += cardHTML;
 
         }).catch(error => console.error("Error loading card template:", error));
     });
 
-});
+// });
 } catch (error) {
     console.error("Error in projects.js:", error);
 }

@@ -10,6 +10,8 @@ function loadPage(page, data, onPageLoad) {
         const tempDiv = document.createElement("div");
         tempDiv.innerHTML = html;
 
+        // console.log(html);
+
         const bodyContent = tempDiv.querySelector("body")?.innerHTML || html;
         
         let processedHtml = bodyContent.replace('/(href|src)="\/([^"]*)"/g', `$1="${window.APP_CONFIG.basePath}/$2"`);
@@ -29,6 +31,18 @@ function loadPage(page, data, onPageLoad) {
         // `;
 
         // console.log(`${appContainer.innerHTML}`);
+
+        const scripts = tempDiv.querySelectorAll("script");
+        scripts.forEach(script => {
+            const newScript = document.createElement("script");
+            if (script.src) {
+                newScript.src = script.src;
+                newScript.defer = script.defer;
+            } else {
+                newScript.textContent = script.textContent;
+            }
+            document.body.appendChild(newScript);
+        });
         
 
         includeComponent('header');

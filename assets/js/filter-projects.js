@@ -1,11 +1,12 @@
-document.addEventListener("DOMContentLoaded", function () {
-    console.log("filter-projects.js");
+
     const filterButtons = document.querySelectorAll(".filter-btn");
 
     filterButtons.forEach(button => {
         button.addEventListener("click", function() {
             const category = this.getAttribute("data-category");
             const projectCards = document.querySelectorAll(".project-card");
+
+
 
             projectCards.forEach(card => {
                 if (category === "all" || card.getAttribute("data-category") === category) {
@@ -19,4 +20,3 @@ document.addEventListener("DOMContentLoaded", function () {
             this.classList.add("active");
         })
     })
-})
