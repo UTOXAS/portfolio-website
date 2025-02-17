@@ -8,6 +8,13 @@ const projects = [
         image: "assets/images/projects/calculator-java.png",
         category: "desktop",
         link: "https://drive.google.com/file/d/13Yx4Pw_oeWoYw3pAdPAcRGtcMYyeuBHQ/view?usp=drive_link"
+    },
+    {
+        title: "Python Calculator",
+        description: " A Basic Python Calculator",
+        image: "assets/images/projects/calculator_python.png",
+        category: "desktop",
+        link: "https://drive.google.com/file/d/1d0IHCWTFQxDa3aL-mQ425Su8kTSYnOKw/view?usp=sharing"
     }
 ]
 
