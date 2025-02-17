@@ -22,7 +22,8 @@ function loadPage(page, data, onPageLoad) {
         }
         appContainer.innerHTML = processedHtml;
 
-        includeComponent('header', data);
+        includeComponent('header');
+        includeComponent('footer');
 
         if (typeof onPageLoad === 'function') {
             onPageLoad(page);
