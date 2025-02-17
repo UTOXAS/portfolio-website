@@ -2,6 +2,22 @@
 <html lang="en">
 
 <head>
+    <script>
+        (function () {
+            // console.log("Hello");
+            // Get the current URL path
+            let currentPath = window.location.pathname;
+
+            // Determine the base path dynamically
+            let basePath = currentPath.substring(0, currentPath.lastIndexOf('/') + 1) || '/';
+
+            console.log(`basePath ${basePath}`);
+            // Create the <base> element dynamically
+            let baseTag = document.createElement('base');
+            baseTag.href = basePath;
+            document.head.prepend(baseTag);
+        })();
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -19,5 +35,6 @@
 </body>
 
 <script src="public/js/bootstrap.js"></script>
+<script src="public/js/scripts.js"></script>
 
 </html>
