@@ -1,7 +1,9 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const appContainer = document.getElementById('app-container');
 
-    // setDarkModeToggle();
+    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    const basePath = isLocal ? '' : '/portfolio-website';
+
+    const appContainer = document.getElementById('app-container');
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener("click", function(event) {
@@ -17,16 +19,15 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
 function loadPage(page, data, onPageLoad) {
-    fetch(`views/${page}.html`)
+    fetch(`${basePath}/views/${page}.html`)
     .then(response => response.text())
     .then(html => {
-        // console.log(`loadPage`);
         const tempDiv = document.createElement("div");
         tempDiv.innerHTML = html;
 
         const bodyContent = tempDiv.querySelector("body")?.innerHTML || html;
         
-        let processedHtml = bodyContent;
+        let processedHtml = bodyContent.replace('/(href|src)="\/([^"]*)"/g', `$1="${basePath}/$2"`);;
         if (data) {
             for (const key in data) {
                 const placeholder = `{{${key}}}`;
@@ -59,6 +60,7 @@ function includeComponent(componentName, data) {
                 const placeholder = `{{${key}}}`;
                 const regex = new RegExp(placeholder, 'g');
                 processedHtml = processedHtml.replace(regex, data[key]);
+                processedHtml = processedHtml.replace('/(href|src)="\/([^"]*)"/g', `$1="${basePath}/$2"`);
             }
         }
 
@@ -77,7 +79,6 @@ function includeComponent(componentName, data) {
 
 function hightlightActiveNav() {
     const currentHash = window.location.hash.replace("#", "") || "home";
-    // const currentPath = window.location.pathname;
     const links = document.querySelectorAll('.navbar-nav .nav-link');
 
     links.forEach(link => {
@@ -96,11 +97,6 @@ function hightlightActiveNav() {
 function handleRouting() {
     let page = window.location.hash.replace("#", "") || "home";
 
-    // console.log(`page: ${page}`);
-
-    // console.log("Before setDartModeToggle()");
-    // setDarkModeToggle();
-    // console.log("After setDartModeToggle()");
 
     if (window.location.pathname.startsWith("/views/")) {
         page = window.location.pathname.split("/").pop().replace(".html", "");
@@ -108,11 +104,8 @@ function handleRouting() {
         return;
     }
 
-    // console.log(`after return`);
     loadPage(page, {}, function() {
         document.title = `My Portfolio - ${page.charAt(0).toUpperCase() + page.slice(1)}`;
-        // console.log(`Page ${page} loaded`);
-        // setDarkModeToggle();
     });
 }
 
@@ -122,44 +115,4 @@ handleRouting();
 
 });
 
-// function setDarkModeToggle() {
-//     // console.log("setDarkModeToggle()");
-//     const darkModeCheckbox = document.getElementById("dark-mode-checkbox");
-//     const body = document.body;
-//     const toggleLabel = document.querySelector(".toggle-label");
 
-//     if (localStorage.getItem("darkMode") === "enabled") {
-//         body.classList.add("dark-mode");
-//         darkModeCheckbox.checked = true;
-//         toggleLabel.textContent = "☀️";
-//     }
-
-//     darkModeCheckbox.addEventListener("change", function () {
-//         // console.log(`this.ischecked: ${this.checked}`);
-//         if (this.checked) {
-//             body.classList.add("dark-mode");
-//             localStorage.setItem("darkMode", "enabled");
-//             toggleLabel.textContent = "☀️";
-//         } else {
-//             body.classList.remove("dark-mode");
-//             localStorage.setItem("darkMode", "disabled");
-//             toggleLabel.textContent = "🌙";
-//         }
-//     });
-
-//     const darkModeToggle = document.getElementById("dark-mode-toggle");
-//     if (darkModeToggle) {
-//         function applyDarkMode(isDark) {
-//             document.body.classList.toggle("dark-mode", isDark);
-//             localStorage.setItem("darkMode", isDark);
-//         }
-
-//         const isDarkMode = localStorage.getItem("darkMode") === "true";
-//         applyDarkMode(isDarkMode);
-
-//         darkModeToggle.addEventListener("click", function () {
-//             applyDarkMode(!document.body.classList.contains("dark-mode"));
-//         });
-
-//     }
-// }
