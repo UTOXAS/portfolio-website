@@ -2,20 +2,6 @@
 <html lang="en">
 
 <head>
-    <script>
-        (function () {
-            // Get the current URL path
-            let currentPath = window.location.pathname;
-
-            // Determine the base path dynamically
-            window.basePath = currentPath.substring(0, currentPath.lastIndexOf('/') + 1) || '/';
-
-            // Create the <base> element dynamically
-            let baseTag = document.createElement('base');
-            baseTag.href = window.basePath;
-            document.head.prepend(baseTag);
-        })();
-    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
@@ -35,79 +21,26 @@
         <section id="projects" class="container mt-5">
             <h2 class="text-center mb-4">My Projects</h2>
             <div class="container text-center">
-                <button class="filter-btn" data-category="all">All</button>
+                <button class="filter-btn active" data-category="all">All</button>
                 <button class="filter-btn" data-category="web">Web</button>
                 <button class="filter-btn" data-category="mobile">Mobile</button>
+                <button class="filter-btn" data-category="desktop">Desktop</button>
+
             </div>
-            <div class="projects-grid">
-                <div class="card web">
-                    <img src="assets/images/project_placeholder.jpg" class="card-img-top" alt="Project 1">
-                    <div class="card-body">
-                        <h5 class="card-title">Project One</h5>
-                        <p class="card-text">A brief description of the project. This project showcases my skills in
-                            HTML, CSS, and JavaScript.</p>
-                        <a href="#" class="btn btn-dark">View Project</a>
-                    </div>
-                </div>
 
-                <!-- Project 2 -->
-                <div class="card mobile">
-                    <img src="assets/images/project_placeholder.jpg" class="card-img-top" alt="Project 2">
-                    <div class="card-body">
-                        <h5 class="card-title">Project Two</h5>
-                        <p class="card-text">An interactive web app built with Bootstrap and JavaScript, demonstrating
-                            responsive design.</p>
-                        <a href="#" class="btn btn-dark">View Project</a>
-                    </div>
-                </div>
+            <div class="projects-grid row mt-4" id="projects-container">
 
-                <!-- Project 3 -->
-                <div class="card web">
-                    <img src="assets/images/project_placeholder.jpg" class="card-img-top" alt="Project 3">
-                    <div class="card-body">
-                        <h5 class="card-title">Project Three</h5>
-                        <p class="card-text">A simple project showcasing animation effects and UI enhancements.</p>
-                        <a href="#" class="btn btn-dark">View Project</a>
-                    </div>
-                </div>
-
-
-                <!-- Project 4 -->
-                <div class="card all">
-                    <img src="assets/images/project_placeholder.jpg" class="card-img-top" alt="Project 4">
-                    <div class="card-body">
-                        <h5 class="card-title">Project Four</h5>
-                        <p class="card-text">A web tool designed to automate tasks using JavaScript.</p>
-                        <a href="#" class="btn btn-dark">View Project</a>
-                    </div>
-                </div>
-
-                <!-- Project 5 -->
-                <div class="card mobile">
-                    <img src="assets/images/project_placeholder.jpg" class="card-img-top" alt="Project 5">
-                    <div class="card-body">
-                        <h5 class="card-title">Project Five</h5>
-                        <p class="card-text">A portfolio website template built with Bootstrap for easy
-                            customization.</p>
-                        <a href="#" class="btn btn-dark">View Project</a>
-                    </div>
-                </div>
-
-                <!-- Project 6 -->
-                <div class="card web">
-                    <img src="assets/images/project_placeholder.jpg" class="card-img-top" alt="Project 6">
-                    <div class="card-body">
-                        <h5 class="card-title">Project Six</h5>
-                        <p class="card-text">A JavaScript-based quiz app with interactive elements.</p>
-                        <a href="#" class="btn btn-dark">View Project</a>
-                    </div>
-                </div>
             </div>
+
+
         </section>
 
     </main>
+
     <div id="footer-container"></div>
 
+    <script src="assets/js/projects.js"></script>
+    <script src="assets/js/filter-projects.js"></script>
     <script src="assets/js/scripts.js"></script>
     <script src="assets/js/dart-mode.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>

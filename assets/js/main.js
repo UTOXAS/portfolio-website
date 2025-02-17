@@ -12,7 +12,7 @@ function loadPage(page, data, onPageLoad) {
 
         const bodyContent = tempDiv.querySelector("body")?.innerHTML || html;
         
-        let processedHtml = bodyContent.replace('/(href|src)="\/([^"]*)"/g', `$1="${window.APP_CONFIG.basePath}/$2"`);;
+        let processedHtml = bodyContent.replace('/(href|src)="\/([^"]*)"/g', `$1="${window.APP_CONFIG.basePath}/$2"`);
         if (data) {
             for (const key in data) {
                 const placeholder = `{{${key}}}`;
@@ -20,10 +20,21 @@ function loadPage(page, data, onPageLoad) {
                 processedHtml = processedHtml.replace(regex, data[key]);
             }
         }
+
+        // console.log(processedHtml);
         appContainer.innerHTML = processedHtml;
+        // appContainer.innerHTML = `
+            // <link rel="stylesheet" href="${window.APP_CONFIG.basePath}/assets/css/style.css">
+            // ${processedHtml}
+        // `;
+
+        // console.log(`${appContainer.innerHTML}`);
+        
 
         includeComponent('header');
         includeComponent('footer');
+
+        // forceReapplyStyles();
 
         if (typeof onPageLoad === 'function') {
             onPageLoad(page);
@@ -34,6 +45,17 @@ function loadPage(page, data, onPageLoad) {
         appContainer.innerHTML = "<p style='color:red;'>Error loading page.</p>";
     });
 }
+
+// 🔹 Function to force reapply styles
+// function forceReapplyStyles() {
+//     const stylesheets = document.querySelectorAll('link[rel="stylesheet"]');
+//     stylesheets.forEach(sheet => {
+//         const newSheet = sheet.cloneNode();
+//         newSheet.href = sheet.href.split("?")[0] + "?" + new Date().getTime(); // Cache busting
+//         sheet.parentNode.replaceChild(newSheet, sheet);
+//     });
+// }
+
 
 function includeComponent(componentName, data) {
     fetch(`${window.APP_CONFIG.basePath}/partials/${componentName}.html`)
