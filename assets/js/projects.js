@@ -5,7 +5,7 @@ const projects = [
     {
         title: "Java Calculator",
         description: "Basic Java Calculator",
-        image: "assets/images/projects/calculator-java.png",
+        image: "assets/images/projects/calculator_java.png",
         category: "desktop",
         link: "https://drive.google.com/file/d/13Yx4Pw_oeWoYw3pAdPAcRGtcMYyeuBHQ/view?usp=drive_link"
     },
