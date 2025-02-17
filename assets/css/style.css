@@ -157,7 +157,7 @@ h2 {
 }
 
 .projects-grid .card img {
-    max-height: 200px;
+    max-height: 250px;
     object-fit: contain;
     border-radius: 10px;
 }
