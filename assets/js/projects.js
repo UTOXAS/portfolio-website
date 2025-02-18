@@ -7,22 +7,36 @@ const projects = [
         description: "Basic Java Calculator",
         image: "assets/images/projects/calculator_java.png",
         category: "desktop",
-        link: "https://drive.google.com/file/d/13Yx4Pw_oeWoYw3pAdPAcRGtcMYyeuBHQ/view?usp=drive_link"
+        link: "https://www.mediafire.com/file/ln09wbpmne248lm/CalculatorApp_Java.rar/file"
     },
     {
         title: "Python Calculator",
         description: "A Basic Python Calculator",
         image: "assets/images/projects/calculator_python.png",
         category: "desktop",
-        link: "https://drive.google.com/file/d/1d0IHCWTFQxDa3aL-mQ425Su8kTSYnOKw/view?usp=sharing"
+        link: "https://www.mediafire.com/file/cqxkzpxryk2qjh9/Calculator_Python.rar/file"
     },
     {
         title: "Quiz App",
         description: "A Flutter Android Mock Quiz App",
         image: "assets/images/projects/quiz_app.jpg",
         category: "mobile",
-        link: "https://drive.google.com/file/d/1dTAq_K0V-xvMh-1IEuHsngptTWo2VJyi/view?usp=drive_link"
+        link: "https://www.mediafire.com/file/odqo7s18tb9arhy/Quiz_v1.0.0_20250218_2329.rar/file"
     },
+    {
+        title: "Unit Converter - J",
+        description: "A Unit Converter App in Java",
+        image: "assets/images/projects/unit_converter_java.png",
+        category: "desktop",
+        link: "https://www.mediafire.com/file/hncq4dls5a2ebcq/UnitConverterApp_Java.rar/file"
+    },
+    {
+        title: "Unit Converter - P",
+        description: "A Unit Converter App in Python",
+        image: "assets/images/projects/unit_converter_python.png",
+        category: "desktop",
+        link: "https://www.mediafire.com/file/x6mfvihblvxtvpr/UnitConverter_Python.rar/file"
+    }
 ]
 
 // const projects = [
