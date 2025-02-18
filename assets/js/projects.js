@@ -11,11 +11,18 @@ const projects = [
     },
     {
         title: "Python Calculator",
-        description: " A Basic Python Calculator",
+        description: "A Basic Python Calculator",
         image: "assets/images/projects/calculator_python.png",
         category: "desktop",
         link: "https://drive.google.com/file/d/1d0IHCWTFQxDa3aL-mQ425Su8kTSYnOKw/view?usp=sharing"
-    }
+    },
+    {
+        title: "Quiz App",
+        description: "A Flutter Android Quiz App",
+        image: "assets/images/projects/quiz_app.jpg",
+        category: "mobile",
+        link: "https://drive.google.com/file/d/1dTAq_K0V-xvMh-1IEuHsngptTWo2VJyi/view?usp=drive_link"
+    },
 ]
 
 // const projects = [
