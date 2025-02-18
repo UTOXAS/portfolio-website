@@ -18,7 +18,7 @@ const projects = [
     },
     {
         title: "Quiz App",
-        description: "A Flutter Android Quiz App",
+        description: "A Flutter Android Mock Quiz App",
         image: "assets/images/projects/quiz_app.jpg",
         category: "mobile",
         link: "https://drive.google.com/file/d/1dTAq_K0V-xvMh-1IEuHsngptTWo2VJyi/view?usp=drive_link"
