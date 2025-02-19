@@ -3,15 +3,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     const appContainer = document.getElementById('app-container');
-
-    var link = document.querySelector("link[rel~='icon']");
-    if (!link) {
-        link = document.createElement('link');
-        link.rel = 'icon';
-        document.head.appendChild(link);
-    }
-    link.href = `${window.APP_CONFIG.basePath}/assets/images/Portfolio Website Logo.ico`;
-
     function loadPage(page, data, onPageLoad) {
         // fetch(`${window.APP_CONFIG.basePath}/pages/${page}.html`)
         fetch(`${window.APP_CONFIG.basePath}/pages/${page}.html`)
@@ -20,8 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 const tempDiv = document.createElement("div");
                 tempDiv.innerHTML = html;
 
-                // console.log(html);
-
+                const headContent = tempDiv.querySelector("head")?.innerHTML || "";
                 const bodyContent = tempDiv.querySelector("body")?.innerHTML || html;
 
                 let processedHtml = bodyContent.replace('/(href|src)="\/([^"]*)"/g', `$1="${window.APP_CONFIG.basePath}/$2"`);
@@ -33,14 +23,11 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 }
 
-                // console.log(processedHtml);
-                appContainer.innerHTML = processedHtml;
-                // appContainer.innerHTML = `
-                // <link rel="stylesheet" href="${window.APP_CONFIG.basePath}/assets/css/style.css">
-                // ${processedHtml}
-                // `;
+                document.head.querySelectorAll("script").forEach(script => script.remove());
+                document.body.querySelectorAll("script").forEach(script => script.remove());
 
-                // console.log(`${appContainer.innerHTML}`);
+                document.head.innerHTML = headContent;
+                appContainer.innerHTML = processedHtml;
 
                 const scripts = tempDiv.querySelectorAll("script");
                 scripts.forEach(script => {
@@ -58,8 +45,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 includeComponent('header');
                 includeComponent('footer');
 
-                // forceReapplyStyles();
-
                 if (typeof onPageLoad === 'function') {
                     onPageLoad(page);
                 }
@@ -70,15 +55,6 @@ document.addEventListener("DOMContentLoaded", function () {
             });
     }
 
-    // 🔹 Function to force reapply styles
-    // function forceReapplyStyles() {
-    //     const stylesheets = document.querySelectorAll('link[rel="stylesheet"]');
-    //     stylesheets.forEach(sheet => {
-    //         const newSheet = sheet.cloneNode();
-    //         newSheet.href = sheet.href.split("?")[0] + "?" + new Date().getTime(); // Cache busting
-    //         sheet.parentNode.replaceChild(newSheet, sheet);
-    //     });
-    // }
 
 
     function includeComponent(componentName, data) {
@@ -137,7 +113,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         loadPage(page, {}, function () {
-            document.title = `My Portfolio - ${page.charAt(0).toUpperCase() + page.slice(1)}`;
         });
     }
 

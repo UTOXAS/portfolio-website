@@ -1,3 +1,4 @@
+// document.addEventListener("DOMContentLoaded", function () {
 
 console.log("projects.js domcontentloaded");
 
@@ -104,3 +105,4 @@ projects.forEach(project => {
 });
 
 
+// })

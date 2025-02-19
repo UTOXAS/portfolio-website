@@ -2,13 +2,28 @@
 <html lang="en">
 
 <head>
+    <script>
+        (function () {
+            console.log("project.html");
+
+            // Get the current URL path
+            let currentPath = window.location.pathname;
+
+            // Determine the base path dynamically
+            let basePath = currentPath.substring(0, currentPath.lastIndexOf('/') + 1) || '/';
+
+            // Create the <base> element dynamically
+            let baseTag = document.createElement('base');
+            baseTag.href = basePath;
+            document.head.prepend(baseTag);
+        })();
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
     <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <script src="config/config.js"></script>
-    <script src="assets/js/main.js" defer></script>
+
 
 
 </head>
