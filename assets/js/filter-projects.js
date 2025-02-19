@@ -1,25 +1,13 @@
 
+$(".filter-btn").click(function () {
+    let category = $(this).attr("data-category");
 
+    // console.log(`categpry: ${category}`);
 
-const filterButtons = document.querySelectorAll(".filter-btn");
+    $(".filter-btn").removeClass("active");
+    $(this).addClass("active");
 
-filterButtons.forEach(button => {
-    button.addEventListener("click", function () {
-        const category = this.getAttribute("data-category");
-        const projectCards = document.querySelectorAll(".project-card");
-
-
-
-        projectCards.forEach(card => {
-            if (category === "all" || card.getAttribute("data-category") === category) {
-                card.style.display = "block";
-            } else {
-                card.style.display = "none";
-            }
-        });
-
-        filterButtons.forEach(btn => btn.classList.remove("active"));
-        this.classList.add("active");
-    })
-})
-
+    $(".project-card").each(function () {
+        $(this).toggle(category === "all" || $(this).data("category") === category);
+    });
+});

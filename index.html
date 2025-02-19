@@ -2,40 +2,36 @@
 <html lang="en">
 
 <head>
-    <script>
-        (function () {
-            console.log("index.html");
-            // Get the current URL path
-            let currentPath = window.location.pathname;
-
-            // Determine the base path dynamically
-            basePath = currentPath.substring(0, currentPath.lastIndexOf('/') + 1) || '/';
-
-            // Create the <base> element dynamically
-            let baseTag = document.createElement('base');
-            baseTag.href = basePath;
-            document.head.prepend(baseTag);
-        })();
-    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-    <title>My Profile</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <script src="config/config.js"></script>
-    <script src="assets/js/main.js" defer></script>
+    <title>Home</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- <script src="set_base_path.js"></script> -->
     <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="vendor/jquery/jquery-3.7.1.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
 </head>
 
 <body>
-    <div id="app-container"></div>
+    <!-- <div id="navbar"></div> -->
+
+    <main id="home">
+        <header class="text-center -bg-primary py-5">
+            <h1>Hi, I'm Abdullah</h1>
+            <p>A passionate Web Developer</p>
+            <a href="pages/projects.html" class="btn btn-dark mt-3">View Projects</a>
+
+        </header>
+
+
+    </main>
+    <!-- <div id="footer"></div> -->
+    <script src="assets/js/dark-mode.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/nav_highlight.js"></script>
+
 </body>
-
-
-<!-- <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<script src="assets/js/scripts.js"></script>
-<script src="assets/js/dart-mode.js"></script> -->
 
 </html>

@@ -2,39 +2,24 @@
 <html lang="en">
 
 <head>
-    <script>
-        (function () {
-            console.log("about.html");
-
-            // Get the current URL path
-            let currentPath = window.location.pathname;
-
-            // Determine the base path dynamically
-            let basePath = currentPath.substring(0, currentPath.lastIndexOf('/') + 1) || '/';
-
-            // Create the <base> element dynamically
-            let baseTag = document.createElement('base');
-            baseTag.href = basePath;
-            document.head.prepend(baseTag);
-        })();
-    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
-    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-
+    <title>About</title>
+    <!-- <script src="/set_base_path.js"></script> -->
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <script src="../vendor/jquery/jquery-3.7.1.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-
-    <div id="header-container"></div>
-
+    <!-- <div id="navbar"></div> -->
     <main id="about">
         <section class="container mt-5 p-4 shadow-sm bg-light rounded">
             <div class="row align-items-center">
                 <div class="col-md-4 text-center">
-                    <img id="abdullah_picture" src="assets/images/profile.jpg" alt="My Photo"
+                    <img id="abdullah_picture" src="../assets/images/profile.jpg" alt="My Photo"
                         class="img-fluid mb-4 rounded-circle shadow-lg" width="225" height="225">
                 </div>
                 <div class="col-md-8">
@@ -53,7 +38,8 @@
                         <li><strong>Client Satisfaction:</strong> Your requirements and satisfaction are my top
                             priority.</li>
                         <li><strong>Clear Communication:</strong> Providing updates and seamless collaboration.</li>
-                        <li><strong>Satisfaction Guaranteed:</strong> Payment is required only when you are completely
+                        <li><strong>Satisfaction Guaranteed:</strong> Payment is required only when you are
+                            completely
                             satisfied.</li>
                     </ul>
                 </div>
@@ -100,7 +86,8 @@
                     I specialize in developing <i>Android applications</i> that are **efficient, user-friendly, and
                     tailored to
                     your specific requirements**.
-                    Whether using <i>Flutter (Dart)</i> for cross-platform apps or <i>native Android development</i>, I
+                    Whether using <i>Flutter (Dart)</i> for cross-platform apps or <i>native Android
+                        development</i>, I
                     focus
                     on
                     creating <i>seamless user experiences</i>.
@@ -141,13 +128,11 @@
         </section>
 
     </main>
-    <div id="footer-container"></div>
+    <!-- <div id="footer"></div> -->
 
-    <script src="assets/js/dart-mode.js"></script>
-    <script src="assets/js/scripts.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-
-
+    <script src="../assets/js/dark-mode.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/nav_highlight.js"></script>
 </body>
 
 </html>

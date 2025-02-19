@@ -2,33 +2,22 @@
 <html lang="en">
 
 <head>
-    <script>
-        (function () {
-            // Get the current URL path
-            let currentPath = window.location.pathname;
-
-            // Determine the base path dynamically
-            let basePath = currentPath.substring(0, currentPath.lastIndexOf('/') + 1) || '/';
-
-            // Create the <base> element dynamically
-            let baseTag = document.createElement('base');
-            baseTag.href = basePath;
-            document.head.prepend(baseTag);
-        })();
-    </script>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
-
+    <!-- <script src="/set_base_path.js"></script> -->
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <script src="../vendor/jquery/jquery-3.7.1.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
 
 </head>
 
 <body>
+    <!-- <div id="navbar"></div> -->
 
-    <div id="header-container"></div>
+
     <main id="contact">
         <section id="contact" class="container mt-5">
             <h2 class="text-center mb-4">Get in Touch</h2>
@@ -67,15 +56,13 @@
                 </div>
             </div>
         </section>
-
     </main>
-    <div id="footer-container"></div>
 
-    <script src="assets/js/dart-mode.js"></script>
-    <script src="assets/js/scripts.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!-- <div id="footer"></div> -->
 
-
+    <script src="../assets/js/dark-mode.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/nav_highlight.js"></script>
 </body>
 
 </html>
