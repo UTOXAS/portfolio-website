@@ -38,5 +38,29 @@
         "image": "/assets/images/projects/unit_converter_python.png",
         "category": "desktop",
         "link": "https://www.mediafire.com/file/x6mfvihblvxtvpr/UnitConverter_Python.rar/file"
+    },
+    {
+        "id": 6,
+        "title": "Weather Website",
+        "description": "Basic Website to View Weather of a City",
+        "image": "/assets/images/projects/weather_dashboard_website.png",
+        "category": "web",
+        "link": "https://utoxas.github.io/weather-dashboard/"
+    },
+    {
+        "id": 7,
+        "title": "TodoList - J",
+        "description": "Basic TodoList App in Java",
+        "image": "/assets/images/projects/todo_list_java.png",
+        "category": "desktop",
+        "link": "https://www.mediafire.com/file/fiuoqdp3ru3ivef/TodoList_App_Java.rar/file"
+    },
+    {
+        "id": 8,
+        "title": "TodoList - P",
+        "description": "Basic TodoList App in Python",
+        "image": "/assets/images/projects/todo_list_python.png",
+        "category": "desktop",
+        "link": "https://www.mediafire.com/file/iik38bmww3bkpog/TodoList_Python.rar/file"
     }
 ]
