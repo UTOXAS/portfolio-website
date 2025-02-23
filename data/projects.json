@@ -75,5 +75,19 @@
         "image": "/assets/images/projects/ecommerce_website.png",
         "category": "web",
         "link": "https://utoxas.github.io/ecommerce-store/"
+    },
+    {
+        "title": "Weather App - J",
+        "description": "Basic Wather App in Java",
+        "image": "/assets/images/projects/weather_java.png",
+        "category": "desktop",
+        "link": "https://www.mediafire.com/file/ucgilky02wsgb1l/WeatherApp_Java.rar/file"
+    },
+    {
+        "title": "Weather App - P",
+        "description": "Basic Wather App in Python",
+        "image": "/assets/images/projects/weather_python.png",
+        "category": "desktop",
+        "link": "https://www.mediafire.com/file/6r20oqk6d5q5t9r/WeatherApp_python.rar/file"
     }
 ]
