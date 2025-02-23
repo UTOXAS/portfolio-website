@@ -62,5 +62,13 @@
         "image": "/assets/images/projects/todo_list_python.png",
         "category": "desktop",
         "link": "https://www.mediafire.com/file/iik38bmww3bkpog/TodoList_Python.rar/file"
+    },
+    {
+        "id": 9,
+        "title": "Notes App",
+        "description": "Basic Notes Android App",
+        "image": "/assets/images/projects/notes_app.jpg",
+        "category": "mobile",
+        "link": "https://www.mediafire.com/file/nbyepjn5s7w7sb5/Notes_v1.0.0_20250223_0235.rar/file"
     }
 ]
