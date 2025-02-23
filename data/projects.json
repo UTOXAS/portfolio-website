@@ -70,5 +70,13 @@
         "image": "/assets/images/projects/notes_app.jpg",
         "category": "mobile",
         "link": "https://www.mediafire.com/file/nbyepjn5s7w7sb5/Notes_v1.0.0_20250223_0235.rar/file"
+    },
+    {
+        "id": 10,
+        "title": "Ecommerce Website",
+        "description": "Mock Ecommerce Website",
+        "image": "/assets/images/projects/ecommerce_website.png",
+        "category": "web",
+        "link": "https://utoxas.github.io/ecommerce-store/"
     }
 ]
