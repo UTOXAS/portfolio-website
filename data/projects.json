@@ -1,6 +1,5 @@
 [
     {
-        "id": 1,
         "title": "Java Calculator",
         "description": "Basic Java Calculator",
         "image": "/assets/images/projects/calculator_java.png",
@@ -8,7 +7,6 @@
         "link": "https://www.mediafire.com/file/ln09wbpmne248lm/CalculatorApp_Java.rar/file"
     },
     {
-        "id": 2,
         "title": "Python Calculator",
         "description": "A Basic Python Calculator",
         "image": "/assets/images/projects/calculator_python.png",
@@ -16,7 +14,6 @@
         "link": "https://www.mediafire.com/file/cqxkzpxryk2qjh9/Calculator_Python.rar/file"
     },
     {
-        "id": 3,
         "title": "Quiz App",
         "description": "A Flutter Android Mock Quiz App",
         "image": "/assets/images/projects/quiz_app.jpg",
@@ -24,7 +21,6 @@
         "link": "https://www.mediafire.com/file/odqo7s18tb9arhy/Quiz_v1.0.0_20250218_2329.rar/file"
     },
     {
-        "id": 4,
         "title": "Unit Converter - J",
         "description": "A Unit Converter App in Java",
         "image": "/assets/images/projects/unit_converter_java.png",
@@ -32,7 +28,6 @@
         "link": "https://www.mediafire.com/file/hncq4dls5a2ebcq/UnitConverterApp_Java.rar/file"
     },
     {
-        "id": 5,
         "title": "Unit Converter - P",
         "description": "A Unit Converter App in Python",
         "image": "/assets/images/projects/unit_converter_python.png",
@@ -40,7 +35,13 @@
         "link": "https://www.mediafire.com/file/x6mfvihblvxtvpr/UnitConverter_Python.rar/file"
     },
     {
-        "id": 6,
+        "title": "BMI Calculator",
+        "description": "A Flutter Android BMI Calculator",
+        "image": "/assets/images/projects/bmi_calculator.png",
+        "category": "mobile",
+        "link": "https://www.mediafire.com/file/ba3jy1tc0azd9a4/BMICalculator_v1.0.0_20250223_2102.rar/file"
+    },
+    {
         "title": "Weather Website",
         "description": "Basic Website to View Weather of a City",
         "image": "/assets/images/projects/weather_dashboard_website.png",
@@ -48,7 +49,6 @@
         "link": "https://utoxas.github.io/weather-dashboard/"
     },
     {
-        "id": 7,
         "title": "TodoList - J",
         "description": "Basic TodoList App in Java",
         "image": "/assets/images/projects/todo_list_java.png",
@@ -56,7 +56,6 @@
         "link": "https://www.mediafire.com/file/fiuoqdp3ru3ivef/TodoList_App_Java.rar/file"
     },
     {
-        "id": 8,
         "title": "TodoList - P",
         "description": "Basic TodoList App in Python",
         "image": "/assets/images/projects/todo_list_python.png",
@@ -64,7 +63,6 @@
         "link": "https://www.mediafire.com/file/iik38bmww3bkpog/TodoList_Python.rar/file"
     },
     {
-        "id": 9,
         "title": "Notes App",
         "description": "Basic Notes Android App",
         "image": "/assets/images/projects/notes_app.jpg",
@@ -72,7 +70,6 @@
         "link": "https://www.mediafire.com/file/nbyepjn5s7w7sb5/Notes_v1.0.0_20250223_0235.rar/file"
     },
     {
-        "id": 10,
         "title": "Ecommerce Website",
         "description": "Mock Ecommerce Website",
         "image": "/assets/images/projects/ecommerce_website.png",
